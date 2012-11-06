@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Checkin do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "scopes" do
+    it "knows about current checkins" do
+      checkins = FactoryGirl.create_list(:checkin, 5,
+                                         starting_at: 5.minutes.ago,
+                                         ending_at: (Time.now + 4.minutes))
+      Checkin.current =~ checkins
+    end
+  end
 end
