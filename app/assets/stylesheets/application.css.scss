@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+@import "bootstrap";
+body { padding: 60px 10px 10px 10px; }
+@import "bootstrap-responsive";
+
 .content {
   background-color: #eee;
   padding: 20px;
