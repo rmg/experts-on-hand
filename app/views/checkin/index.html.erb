@@ -1,2 +1,4 @@
-<h1>Checkin#index</h1>
-<p>Find me in app/views/checkin/index.html.erb</p>
+<h2>Who's around</h2>
+<% @current.each do |ci| %>
+  <span class="btn"><i class="icon-user"></i><%= ci.user.fullname %></span>
+<% end %>
