@@ -33,7 +33,8 @@ describe CheckinController do
 
     describe "POST 'create'" do
       it "should let a user post a checkin" do
-
+        post 'create', {starting_at: Time.now, ending_at: Time.now+1.hour}
+        assigns(:checkin).should be_persisted
       end
     end
   end

@@ -7,8 +7,8 @@ class CheckinController < ApplicationController
 
   def create
     @checkin = Checkin.new
-    @checkin.starting = params.fetch :starting_at, Time.now
-    @checkin.ending = params.fetch :ending_at, Time.now
+    @checkin.starting_at = params.fetch :starting_at, Time.now
+    @checkin.ending_at = params.fetch :ending_at, Time.now
     @checkin.user = current_user
     unless @checkin.save
       flash[:error] = "Sorry, something went wrong when checking you in"
