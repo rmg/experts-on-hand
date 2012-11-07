@@ -12,7 +12,7 @@ describe CheckinController do
       end
     end
     describe "POST 'create'" do
-      pending "renders the login page" do
+      it "renders the login page" do
         post 'create'
         response.should redirect_to(new_user_session_path)
       end
