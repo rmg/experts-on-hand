@@ -8,6 +8,20 @@ require 'rspec/autorun'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+class TextSelector
+  include ActionDispatch::Assertions::SelectorAssertions
+  include Test::Unit::Assertions
+  def initialize(text)
+    @selected = HTML::Document.new(text).root.children
+  end
+end
+
+RSpec::Matchers.define :match_select do |*expected|
+  match do |actual|
+    TextSelector.new(actual).assert_select(*expected)
+  end
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
