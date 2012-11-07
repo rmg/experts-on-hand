@@ -5,4 +5,7 @@ class Checkin < ActiveRecord::Base
   scope :current, ->() {
     where('starting_at < NOW() AND ending_at > NOW()')
   }
+  scope :old, ->() {
+    where('ending_at < NOW()')
+  }
 end

@@ -1,7 +1,23 @@
-<h2>Who's around</h2>
+<h2>Who's On Deck?</h2>
+<%= render partial: 'form' %>
 <% @current.each do |ci| %>
   <span class="btn checkin">
     <i class="icon-user"></i>
-    <%= ci.user.fullname %>
+    <%= checkin_badge ci %>
   </span>
 <% end %>
+
+<h2>Everyone</h2>
+<%= magic_grid(User.scoped,
+               [{ col: :fullname, label: 'Name'},
+                { col: :last_sign_in_at,
+                  label: 'Last seen',
+                  to_s: ->(u) {
+                    if u.last_sign_in_at
+                      last_seen = distance_of_time_in_words Time.now, u.last_sign_in_at
+                      "#{last_seen} ago"
+                    else
+                      'never'
+                    end
+                  }
+                }]) %>

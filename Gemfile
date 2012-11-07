@@ -19,6 +19,7 @@ end
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'magic_grid'
 
 group :development, :test do
   gem 'rspec-rails'
