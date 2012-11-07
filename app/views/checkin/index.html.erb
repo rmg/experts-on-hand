@@ -1,4 +1,7 @@
 <h2>Who's around</h2>
 <% @current.each do |ci| %>
-  <span class="btn checkin"><i class="icon-user"></i><%= ci.user.fullname %></span>
+  <span class="btn checkin">
+    <i class="icon-user"></i>
+    <%= ci.user.fullname %>
+  </span>
 <% end %>
