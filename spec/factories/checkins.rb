@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :checkin do
-    user nil
+    user
     starting_at "2012-11-05 23:41:31"
     ending_at "2012-11-05 23:41:31"
   end
