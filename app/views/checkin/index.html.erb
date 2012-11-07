@@ -1,5 +1,9 @@
+<%= form_for(Checkin.new, url: 'checkin/create') do |f| %>
+  <%= f.submit "I'm here!", title: "Checkin for the next hour" %>
+<% end %>
+
 <h2>Who's On Deck?</h2>
-<%= render partial: 'form' %>
+
 <% @current.each do |ci| %>
   <span class="btn checkin">
     <i class="icon-user"></i>

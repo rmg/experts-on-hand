@@ -1,9 +1,29 @@
-<h2>README</h2>
+<h2>Experts On Hand</h2>
 
 <p>
   Well this was fun! I completely glossed over the solution and went straight
   on to an over-featured.. thing. But at least it is something to look at.
 </p>
+
+<p>
+  The source can be found on github at
+  <a href="http://github.com/rmg/experts-on-hand">rmg/experts-on-hand</a>
+  and a running demo can be found on Heroku at
+  <a href="http://experts-on-hand.herokuapp.com/">experts-on-hand.herokuapp.com</a>. The demo is running on a free instance, so forgive the lag if you're the
+  first visitor in the last 20 minutes.
+</p>
+
+<h3>Setup</h3>
+<p>
+  This is a basic Rails app with 2 models, 1 minimal controller, and no
+  resourceful routes. What is that, Sinatra on Rails?
+</p>
+<ul>
+  <li>Postgres because it is easy to use with Heroku</li>
+  <li>RSpec because I'm more familiar with it</li>
+  <li>Devise because it seemed the simplest way to get up and running</li>
+  <li>Bootstrap just because</li>
+</ul>
 
 <h3>The idea</h3>
 <p>
@@ -51,5 +71,22 @@
 </dl>
 
 <h3>Future</h3>
-<p>
-</p>
+<dl>
+  <dt>Teams</dt>
+  <dd>
+    This is a neat idea. You organise the users into teams and then show how
+    many members of a team are around. Instead of users showing up in the list,
+    you'd have something like the group name with a (n/m) beside it indicating
+    how many people on that team are around. This would likely start off as your
+    average has_many/belongs_to relationship between a Team model and the existing
+    User model.
+  </dd>
+  <dt>Skills</dt>
+  <dd>
+    From a data perspective, this is the same as turning teams into a HABTM (has
+    and belongs to many) with the User model. The idea here would be to tag the
+    users with various keywords or skills, and the "in/out board" would basically
+    be a tag cloud of what expertise is on-hand at the moment. <b>I like tagging,
+    so this is probably what I'd end up making.</b>
+  </dd>
+</dl>
