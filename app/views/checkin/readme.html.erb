@@ -1,0 +1,55 @@
+<h2>README</h2>
+
+<p>
+  Well this was fun! I completely glossed over the solution and went straight
+  on to an over-featured.. thing. But at least it is something to look at.
+</p>
+
+<h3>The idea</h3>
+<p>
+  When I read the problem, I started thinking up how to solve it and ignored the
+  given solution. So what I ended up with was a concept of checkins, where users
+  would checkin and show up on a checkin board.
+</p>
+
+<h3>Checkins</h3>
+<p>
+  The idea here is checkins are essentially log entries. The table will grow and
+  grow and the displayed set will be limited by the query. This makes sense in
+  almost any system because almost every system seems to grow to need logging. The
+  only reason <b>not</b> to use a log style table is size constraints.
+</p>
+<p>
+  Which is greater? The problem with prematurely optimizing for size? Or adding a
+  YAGNI (you aint gonna need it) feature? Turns out logs are actually a little
+  easier to test, being immutable and all.
+</p>
+
+<h3>Alternatives</h3>
+<p>
+  So the obvious solution (the one given in the project description) is to just
+  tac on a couple fields to the User model.
+</p>
+<dl>
+  <dt><code>last_seen_at</code></dt>
+  <dd>This mechanism could be modelled based on some measure of activity. Maybe a
+  a button that says "I'm here!" that refreshes their last_seen_at timestamp. 
+  There would need to be an expiry, which would happen to be exactly the margin
+  of error with this approach.</dd>
+  <dt>
+    <code>status</code>
+    <code>status_starts_at</code>
+    <code>status_ends_at</code>
+  </dt>
+  <dd>
+    Here's a good combo. The duration could be hidden from the user so that all
+    they have is an "I'm here!" and an "I'm outta here!" button. Could use some
+    JavaScript to pop up a little reminder to re-assert themselves. Status could
+    be a string or an enum. Would be easy enough to make it a free-form string
+    with a hand-full of pre-defined ones that have colours associated with them.
+  </dd>
+</dl>
+
+<h3>Future</h3>
+<p>
+</p>
