@@ -1,6 +1,8 @@
 ## Experts On Hand
+&copy; 2012 Ryan Graham. All rights reserved.
 
   Well this was fun! I completely glossed over the solution and went straight
+dd
   on to an over-featured.. thing. But at least it is something to look at.
 
   The source can be found on github at
